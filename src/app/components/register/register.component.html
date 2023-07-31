@@ -1,0 +1,67 @@
+<div class="whole">
+    <header>
+      <h1>Welcome to HinG ChaT!</h1>
+      <h1><span class="material-symbols-outlined">
+        forum
+        </span></h1>
+    </header>
+<div class="form">
+    <form [formGroup]="register" (ngSubmit)="registerForm()">
+        <div class="formcontrol username">
+            <label>UserName</label>
+            <input type="text" placeholder="Enter Your Name" name="username" formControlName="username">
+            <div class="error" *ngIf="register.controls.username.invalid && register.controls.username.touched">
+                <small *ngIf="register.controls.username.errors?.['required']">Username Field is required</small>
+                <small *ngIf="register.controls.username.errors?.['maxlength']">Username Field is Invalid</small>
+            </div>
+        </div>
+        <div class="formcontrol mobile">
+            <label>Mobile No</label>
+            <input type="text" placeholder="Enter Your Name" name="username" formControlName="mobile">
+            <div class="error" *ngIf="register.controls.mobile.invalid && register.controls.mobile.touched">
+                <small *ngIf="register.controls.mobile.errors?.['required']">Mobile No Field is required</small>
+                <small *ngIf="register.controls.mobile.errors?.['maxlength']">Mobile No Field is Invalid</small>
+            </div>
+        </div>
+        <div class="formcontrol email">
+            <label>E-Mail</label>
+            <input type="email" placeholder="Enter Your E-mail" name="email" formControlName="email">
+            <div class="error" *ngIf="register.controls.email.invalid && register.controls.email.touched">
+                <small *ngIf="register.controls.email.errors?.['required']">E-mail Field is required</small>
+                <small *ngIf="register.controls.email.errors?.['email']">E-mail Field is Invalid</small>
+            </div>
+        </div>
+        <div class="formcontrol password">
+            <label>Password</label>
+            <input type="{{ showPassword ? 'text' : 'password' }}" placeholder="Enter Your Password" name="password"
+                formControlName="password" class="pass">
+            <button mat-icon-button (click)="togglePasswordVisibility()" tabindex="-1">
+                <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <div class="error passerror" *ngIf="register.controls.password.invalid && register.controls.password.touched">
+                <small *ngIf="register.controls.password.errors?.['required']">Password Field is required</small>
+                <small *ngIf="register.controls.password.errors?.['pattern']">Give Strong Password</small>
+            </div>
+        </div>
+        <div class="formcontrol conpassword">
+            <label>Confirm Password</label>
+            <input type="{{ showConPassword ? 'text' : 'password' }}" placeholder="Re-enter Your Password"
+                name="conpassword" formControlName="conpassword" class="pass">
+            <button mat-icon-button (click)="toggleConPasswordVisibility()" tabindex="-1">
+                <mat-icon>{{ showConPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <div class="error conerror"
+                *ngIf="register.controls.conpassword.errors?.['passwordMatchValidator'] && register.controls.conpassword.touched">
+                <small>Passwords do not match</small>
+            </div>
+        </div>
+
+        <div class="submit">
+            <button>SUBMIT</button>
+        </div>
+        <div class="link">
+           <p>Already Registerd <a routerLink="/login">Login here</a></p> 
+        </div>
+    </form>
+    </div>
+</div>

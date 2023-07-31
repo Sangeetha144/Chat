@@ -1,0 +1,27 @@
+{
+  "userData": [
+    {
+      "username": "Sangeetha",
+      "email": "sangeethaselvaraj144@gmail.com",
+      "password": "sanG143*#",
+      "conpassword": "sanG143*#",
+      "id": 1
+    },
+    {
+      "username": "Logesh",
+      "email": "logesh@gmail.com",
+      "password": "logE143*#",
+      "conpassword": "logE143*#",
+      "id": 2
+    }
+  ],
+  "Contact": [
+    {
+      "firstName": "Sriram",
+      "lastName": "Ram",
+      "phoneNo": "8790674587",
+      "userId": 2,
+      "id": 1
+    }
+  ]
+}

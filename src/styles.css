@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Set up the default theme colors using CSS variables *
+  
+/* Default theme styles */
+body.default-theme {
+    background-image: url('./assets/whatsapp.png');/* Replace with your default background color */
+    color: #333; /* Replace with your default text color */
+  }
+  
+ 
+  /* Dark theme styles */
+  /* styles.css */
+/* Include your other styles for the chat component here */
+
+body.dark-theme {
+  background-color: rgb(11, 20, 26);
+  background-image: url('./assets/bg-chat-tile-dark_a4be512e7195b6b733d9110b408f075d.png');
+
+  position: relative;
+  color: white; /* Replace with your dark text color */
+}
+
+
+      
+ 
+  
+  
+  
+
+
+
+  

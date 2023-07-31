@@ -1,0 +1,90 @@
+<div>
+  <p >
+    <mat-toolbar id="navbar">
+      <mat-toolbar-row>
+        <span class="name">H<span class="split">in</span>G C<span class="split">ha</span>T</span>
+        <span class="material-symbols-outlined">
+          forum
+        </span>
+        <span class="example-spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" class="example-icon"
+          aria-label="Example icon-button with menu icon">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item  >
+            <mat-icon>account_box</mat-icon>
+            <span>Profile</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>people</mat-icon>
+            <span>New Group</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon> contacts</mat-icon>
+            <span>Contacts</span>
+          </button>
+
+          <button mat-menu-item [matMenuTriggerFor]="themeMenu">
+            <mat-icon>brightness_medium</mat-icon>
+            <span>Theme</span>
+          </button>
+
+          <mat-menu #themeMenu="matMenu">
+            <button mat-menu-item (click)="changeTheme('dark')">
+              <mat-icon>brightness_3</mat-icon>
+              <span>Dark Theme</span>
+            </button>
+            <button mat-menu-item (click)="changeTheme('default')">
+              <mat-icon>brightness_low</mat-icon>
+              <span>Default Theme</span>
+            </button>
+             </mat-menu>
+
+          <button mat-menu-item>
+            <mat-icon>favorite</mat-icon>
+            <span>Starred Message</span>
+          </button>
+          <button mat-menu-item (click)="logout()">
+            <mat-icon>exit_to_app</mat-icon>
+            <span>Logout</span>
+          </button>
+        </mat-menu>
+      </mat-toolbar-row>
+
+      <mat-toolbar-row>
+
+        <button mat-raised-button class="contact example-icon favorite-icon" (click)="openDialog()"
+          >
+          <span>New Contact</span>
+          <mat-icon id="add" style=" font-size: 22px;padding: 5px;">person_add</mat-icon>
+        </button>
+        <button mat-raised-button class="contact example-icon favorite-icon "
+         >
+          <span>New Group</span>
+          <mat-icon id="add" style=" font-size: 22px;padding: 5px;">group_add</mat-icon>
+
+        </button>
+
+        <span class="example-spacer"></span>
+        <button mat-raised-button class="example-icon favorite-icon"
+       >
+          <span>Chats</span>
+
+        </button>
+        <button mat-raised-button class="example-icon favorite-icon" >
+          <span>Group Chat</span>
+
+        </button>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </p>
+  <div class="parent" style="display: flex;">
+    <div style="width:35%">
+      <app-contactlisting></app-contactlisting>
+    </div>
+    <div style="width:75%">
+      <router-outlet name="chat"></router-outlet>
+    </div>
+  </div>
+</div>

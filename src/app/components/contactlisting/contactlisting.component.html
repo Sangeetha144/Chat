@@ -1,0 +1,16 @@
+<!-- app-contactlisting.component.html -->
+
+<div *ngIf="contacts.length > 0">
+    <ul>
+      <li *ngFor="let contact of contacts" (click)="onContactClick(contact)">
+        <!-- Display contact as a button with router link -->
+        <button>
+          {{ contact.firstName }} - {{ contact.phoneNo }}
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div *ngIf="contacts.length === 0">
+    No contacts found.
+  </div>
+  

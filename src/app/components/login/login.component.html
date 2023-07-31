@@ -1,0 +1,41 @@
+<div class="whole">
+    <header>
+      <h1>Welcome to HinG ChaT!</h1>
+      <h1><span class="material-symbols-outlined">
+        forum
+        </span></h1>
+    </header>
+<div class="form">
+    <form [formGroup]="login" (ngSubmit)="loginForm()">
+      
+        <div class="form-control username">
+            <label>UserName</label>
+            <input type="text" placeholder="Enter Your Name" name="username" formControlName="username">
+            <div class="error" *ngIf="login.controls.username.invalid && login.controls.username.touched">
+                <small *ngIf="login.controls.username.errors?.['required']">Username Field is required</small>
+                <small *ngIf="login.controls.username.errors?.['maxlength']">Username Field is Invalid</small>
+            </div>
+        </div>
+        <div class="form-control password">
+            <label>Password</label>
+            <input type="{{ showPassword ? 'text' : 'password' }}" placeholder="Enter Your Password" name="password"
+                formControlName="password" class="pass">
+            <button mat-icon-button (click)="togglePasswordVisibility()" tabindex="-1">
+                <mat-icon>{{ showPassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+            </button>
+            <div class="error passerror" *ngIf="login.controls.password.invalid && login.controls.password.touched">
+                <small *ngIf="login.controls.password.errors?.['required']">Password is wrong</small>
+               
+            </div>
+        </div>
+      
+
+        <div class="submit">
+            <button>LOGIN</button>
+        </div>
+        <div class="link">
+          <p>Create New Account <a routerLink="/register">Register Here</a> </p> 
+          </div>
+    </form>
+    </div>
+</div>

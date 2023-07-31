@@ -1,0 +1,31 @@
+<div class="whole">
+  <h1 mat-dialog-title>
+    ADD NEW CONTACT
+  </h1>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div mat-dialog-content>
+      <mat-form-field class="example-full-width">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="Firstname" formControlName="firstName">
+        <mat-error *ngIf="contactForm.get('firstName')?.errors?.['required']">First Name is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Lastname" formControlName="lastName">
+        <mat-error *ngIf="contactForm.get('lastName')?.errors?.['required']">Last Name is required</mat-error>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Phone No</mat-label>
+        <input matInput placeholder="Phone No" formControlName="phoneNo">
+        <mat-error *ngIf="contactForm.get('phoneNo')?.errors?.['required']">Phone No is required</mat-error>
+        <mat-error *ngIf="contactForm.get('phoneNo')?.errors?.['maxlength']">Phone No must be at most 10 characters</mat-error>
+      </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+      <button mat-raised-button  style="background-color:rgb(0,168,132);color:white" type="submit">
+        SAVE
+      </button>
+      <button mat-raised-button color="warn" mat-dialog-close>CANCEL</button>
+    </div>
+  </form>
+</div>
